@@ -5,5 +5,8 @@ from dataloader import GUDIDLoader
 
 if '__main__' == __name__:
 	loader = GUDIDLoader()
-	if loader.reqs_present() == True:
+	try:
+		loader.reqs_present()
 		loader.validate_xml()
+	finally:
+		loader.create_database()
